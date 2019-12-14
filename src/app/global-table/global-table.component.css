@@ -1,0 +1,15 @@
+.table tr.active td {
+  background-color: #123456 !important;
+  color: white;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
+}
+
+th {
+  cursor: pointer;
+}

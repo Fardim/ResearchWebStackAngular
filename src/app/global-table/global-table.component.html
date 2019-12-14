@@ -1,0 +1,27 @@
+<p style="font-size: larger;">{{ title }}</p>
+<div class="row">
+  <div class="col">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Sl no</th>
+          <th *ngFor="let col of columns">
+            <div *ngIf="!col.isSortable">{{ col.title }}</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody *ngIf="globalItemsList">
+        <tr
+          *ngFor="let v of globalItemsList; let i = index"
+          (click)="rowSelected(v, i)"
+          [class.active]="i == selectedRow"
+        >
+          <td>{{ i + 1 }}</td>
+          <td *ngFor="let col of columns" class="ellipsis">
+            {{ v[col.key] }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
