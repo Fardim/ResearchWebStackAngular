@@ -1,3 +1,4 @@
+import { CommandLineService } from './_services/command-line.service';
 import { AppRoutingModule } from "./app-routing.module";
 import { RouterModule } from "@angular/router";
 import { UnitTestResultService } from "./_services/unit-test-result.service";
@@ -15,6 +16,7 @@ import { GetInfoComponent } from "./get-info/get-info.component";
 import { GlobalTableComponent } from "./global-table/global-table.component";
 import { FailedTestComponent } from "./failed-test/failed-test.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommandLineComponent } from './command-line/command-line.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     GlobalTableComponent,
     NonPassingComponent,
     PassedTestComponent,
-    FailedTestComponent
+    FailedTestComponent,
+    CommandLineComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UnitTestResultService],
+  providers: [UnitTestResultService, CommandLineService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

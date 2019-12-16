@@ -1,3 +1,4 @@
+import { CommandLineComponent } from "./command-line/command-line.component";
 import { GetInfoComponent } from "./get-info/get-info.component";
 import { NonPassingComponent } from "./non-passing/non-passing.component";
 import { PassedTestComponent } from "./passed-test/passed-test.component";
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "passed", component: PassedTestComponent },
   { path: "nonpassing", component: NonPassingComponent },
   { path: "searchTest", component: GetInfoComponent },
+  { path: "commandline", component: CommandLineComponent },
   { path: "**", redirectTo: "home" }
 ];
 

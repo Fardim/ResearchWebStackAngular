@@ -10,27 +10,27 @@ export class UnitTestResultService {
   constructor(private http: HttpClient) {}
 
   getUnitTestResultsAll() {
-    return this.http.get<UnitTestResult[]>(environment.apiUrl);
+    return this.http.get<UnitTestResult[]>(environment.apiUrl + "UnitTests/");
   }
   getNonPassingTest() {
     return this.http.get<UnitTestResult[]>(
-      environment.apiUrl + "GetNonPassingTest"
+      environment.apiUrl + "UnitTests/GetNonPassingTest"
     );
   }
   getPassingTest() {
     return this.http.get<UnitTestResult[]>(
-      environment.apiUrl + "GetPassingTest"
+      environment.apiUrl + "UnitTests/GetPassingTest"
     );
   }
   getFailedTest() {
     return this.http.get<UnitTestResult[]>(
-      environment.apiUrl + "GetFailedTest"
+      environment.apiUrl + "UnitTests/GetFailedTest"
     );
   }
   getInfo(obj: { testName: string; filterType: number }) {
     return this.http.get<UnitTestResult[]>(
       environment.apiUrl +
-        "GetInfo/?testName=" +
+        "UnitTests/GetInfo/?testName=" +
         obj.testName +
         "&filterType=" +
         obj.filterType
